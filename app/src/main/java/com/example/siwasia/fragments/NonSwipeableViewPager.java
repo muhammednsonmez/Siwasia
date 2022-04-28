@@ -37,6 +37,8 @@ public class NonSwipeableViewPager extends ViewPager {
             scroller.set(this,new MyScroller (getContext()));
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
     }
 
@@ -51,7 +53,7 @@ public class NonSwipeableViewPager extends ViewPager {
             super(context,new DecelerateInterpolator());
         }
         @Override
-        public void startScroll (int startX, int startY, int dx, int dy) {
+        public void startScroll (int startX, int startY, int dx, int dy, int duration) {
             super.startScroll(startX, startY, dx, dy);
         }
     }
