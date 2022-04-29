@@ -1,4 +1,4 @@
-package com.example.siwasia;
+package com.example.siwasia.ismailke;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -22,11 +22,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.siwasia.R;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;

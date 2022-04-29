@@ -24,7 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Siwasia" >
         <activity
-            android:name=".MainActivity"
+            android:name=".ismailke.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ImageActivity"
+            android:name=".ismailke.ImageActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.siwasia.fragments;
+package com.example.siwasia.utils;
 
 import android.content.Context;
 import android.util.AttributeSet;

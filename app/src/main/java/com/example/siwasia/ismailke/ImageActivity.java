@@ -1,10 +1,11 @@
-package com.example.siwasia;
+package com.example.siwasia.ismailke;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.siwasia.R;
 import com.example.siwasia.fragments.CollageFragment;
 import com.example.siwasia.fragments.EditFragment;
 import com.example.siwasia.fragments.FilterFragment;
