@@ -34,8 +34,12 @@ import java.util.Locale;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends AppCompatActivity {
+        static
+        {
+            System.loadLibrary("NativeImageProcessor");
+        }
 
-    private static final int REQUEST_PERMISSIONS = 1234;
+        private static final int REQUEST_PERMISSIONS = 1234;
     private static final String[] PERMISSIONS = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE

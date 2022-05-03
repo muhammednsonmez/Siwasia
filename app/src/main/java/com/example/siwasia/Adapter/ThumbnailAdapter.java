@@ -2,6 +2,8 @@ package com.example.siwasia.Adapter;
 
 import android.content.Context;
 import android.media.Image;
+import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,23 +14,48 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.siwasia.Interface.FiltersListFragmentListener;
 import com.example.siwasia.R;
+import com.example.siwasia.utils.ThumbnailItem;
+import com.zomato.photofilters.imageprocessors.Filter;
+
+import java.util.List;
 
 public class ThumbnailAdapter extends RecyclerView.Adapter<ThumbnailAdapter.MyViewHolder> {
 
-    private List<Thumbnail> thumbnailItems;
+    private List<ThumbnailItem> thumbnailItems;
     private FiltersListFragmentListener listener;
     private Context context;
     private int selectedIndex = 0;
 
+    public ThumbnailAdapter(List<ThumbnailItem> thumbnailItems, FiltersListFragmentListener listener, Context context) {
+        this.thumbnailItems = thumbnailItems;
+        this.listener = listener;
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View itemView = LayoutInflater.from(context).inflate(R.layout.thumbnail_item,parent,false);
+        return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        final ThumbnailItem thumbailItem = thumbnailItems.get(position);
+        holder.thumbnail.setImageBitmap(thumbailItem.image);
+        holder.thumbnail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onFilterSelected(thumbailItem.filter);
+                selectedIndex = position;
+                notifyDataSetChanged();
+            }
+        });
 
+        holder.filter_name.setText(thumbailItem.filterName);
+
+        if (selectedIndex == position)
+            holder.filter_name.setTextColor(ContextCompat.getColor(context,ContextCompat.getColor(context, R.color.selected_filter)));
     }
 
     @Override
